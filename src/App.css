@@ -122,23 +122,6 @@
 }
 
 
-.form-register {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 400px;
-    width: 100%;
-    background: #1b0656;
-    padding: 20px; /* Reducir el espacio interno */
-    border-radius: 4px;
-    font-family: 'calibri';
-    color: white;
-    box-shadow: 7px 13px 37px #000;
-    margin: 80px auto 0; /* Margen superior de 50px, centrado horizontalmente y sin margen inferior */
-}
-
-  
   
   
   
