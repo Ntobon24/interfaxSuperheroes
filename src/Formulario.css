@@ -1,5 +1,5 @@
 input.controls{
-    display: block;
+    display: flex;
     width: 50%;
     background: #24303c;
     padding: 10px;
@@ -9,12 +9,13 @@ input.controls{
     font-family: 'calibri';
     font-size: 10px;
     color: rgb(241, 241, 241);
+    
  
 
 }
 
-input {
-    width: 100;
+input{
+    width: 100%;
 }
 
 .errores {
@@ -23,24 +24,47 @@ input {
     font-size: x-small;
   }
   
-
+.text{
+    color: #000000c0;
+}
 
 .form-register {
     border: 1px solid #ffffffd5;
-
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 400px;
+    min-width: 300px; /* Tamaño mínimo */
     width: 100%;
     background: #1b0656;
-    padding: 20px; /* Reducir el espacio interno */
+    padding: 10%; /* Reducir el espacio interno */
     border-radius: 4px;
     font-family: 'calibri';
     color: white;
     box-shadow: 7px 13px 37px #000;
     margin: 100px auto 0; /* Margen superior de 50px, centrado horizontalmente y sin margen inferior */
+    flex-direction: column; /* Para que los elementos se alineen en columnas */
 }
 
-  
-  
+@media (min-width: 600px) {
+    .form-register {
+        flex-direction: row; /* Cambiar a dirección horizontal si el tamaño de la ventana es mayor a 600px */
+    }
+}
+
+input.boton {
+    width: 130px; /* Ancho automático según el contenido */
+    background: #5f0000a6;
+    border: 1px solid #f0ffff; /* Borde blanco de 2px */
+    padding: 5px 10px; /* Espaciado interno */
+    color: rgba(255, 255, 255, 0.753);
+    margin: 16px 0;
+    font-size: 14px;
+    border-radius: 9px;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    align-content: center;
+}
+
+input.boton:hover {
+    background: #071624; /* Cambia el color de fondo al pasar el cursor */
+}
