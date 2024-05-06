@@ -1,0 +1,144 @@
+#root {
+  
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea los elementos horizontalmente */
+}
+
+.header {
+  margin-bottom: 50px; /* Espacio entre el header y el aside */
+}
+.container span {
+  font-size: 80px;
+  font-weight: bold;
+  font-family: "Fredoka One";
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  margin-right: 20px; /* Agrega espacio entre los elementos */
+  position: sticky;
+  top: 0; /* Fija el elemento en la parte superior de .container */
+}
+.container span:last-child {
+  margin-right: 0; /* Elimina el margen derecho del último elemento para evitar un espacio extra */
+}
+
+.container span::before {
+  content: var(--l);
+  position: absolute;
+  transform: scale(1.1);
+  filter: blur(15px);
+}
+
+.container span:hover {
+  filter: contrast(250%);
+}
+.container span:nth-child(1) {
+  color: #711CEB;
+}
+.container span:nth-child(2) {
+  color: #96AAEB;
+}
+.container span:nth-child(3) {
+  color: #2E1CEB;
+}
+.container span:nth-child(4) {
+  color: #D7CFE3;
+}
+.container span:nth-child(5) {
+  color: #B51CEB;
+}
+.container span:nth-child(6) {
+  color: #497968;
+}
+.container span:nth-child(7) {
+  color: #CA7EE5;
+}
+.container span:nth-child(8) {
+  color: #6558EB;
+}
+.container span:nth-child(9) {
+  color: #bb00ff;
+}
+.container span:nth-child(10) {
+  color: #7ECD65;
+}
+.container span:nth-child(11) {
+  color: #333aff;
+}
+
+
+.menu {
+  width: 33%;
+  align-items: center;
+  top: 50%;
+  position: absolute;
+  left: 20%; /* Cambia este valor para ajustar el espacio a tu gusto */
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column; /* Cambia la dirección del flexbox a columna */
+  justify-content: center;
+}
+
+
+
+.boton-menu {
+  font-size: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 16px;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+  border: 3px solid #000;
+  transition: .3s ease background-color;
+  width: 65%; /* Ajusta el ancho automáticamente al contenido */
+  box-sizing: border-box; 
+  /* Asegura que el padding no aumente el ancho del botón */
+}
+
+.boton-menu:hover {
+  opacity: .8;
+}
+
+
+.boton-menu.presionado {
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: rgba(25, 0, 169, 0.235);
+  opacity: 1;
+}
+
+.boton-menu.presionado:hover {
+  background-color: rgba(255, 0, 0, 0.178);
+  color: #ff0000cd;
+  border: 3px solid #b50000d2;
+  transition: .3s ease all;
+  opacity: 1;
+}
+
+
+.form-register {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    background: #1b0656;
+    padding: 20px; /* Reducir el espacio interno */
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+    margin: 80px auto 0; /* Margen superior de 50px, centrado horizontalmente y sin margen inferior */
+}
+
+  
+  
+  
+  

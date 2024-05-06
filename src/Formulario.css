@@ -1,0 +1,46 @@
+input.controls{
+    display: block;
+    width: 50%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #000000;
+    font-family: 'calibri';
+    font-size: 10px;
+    color: rgb(241, 241, 241);
+ 
+
+}
+
+input {
+    width: 100;
+}
+
+.errores {
+    display: block;
+    color: tomato;
+    font-size: x-small;
+  }
+  
+
+
+.form-register {
+    border: 1px solid #ffffffd5;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
+    background: #1b0656;
+    padding: 20px; /* Reducir el espacio interno */
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+    margin: 100px auto 0; /* Margen superior de 50px, centrado horizontalmente y sin margen inferior */
+}
+
+  
+  
