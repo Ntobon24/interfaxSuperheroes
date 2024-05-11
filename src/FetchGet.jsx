@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 
-function FetchGet({ url, children }) {
+function FetchGet({ url }) {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -12,18 +12,12 @@ function FetchGet({ url, children }) {
 
     fetch(url, requestOptions)
       .then(response => response.json())
-      .then(data => {
-        if (data && data.length > 0) {
-          setData(data[0].data);
-          console.log(data);
-        } else {
-          console.error('No se recibieron datos o el array está vacío');
-        }
-      })
+      .then(data => 
+        setData(data))
       .catch(error => console.log(error));
   }, []); 
 
-  return <>{data && children(data)}</>;
+  return {data};
 }
 
 export default FetchGet;

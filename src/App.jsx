@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import './App.css';
 import Formulario from './Formulario';
+import Header from './Header';
+import FetchGet from './FetchGet';
 import CampoDeUsuarios from './CampoDeUsuarios';
 
-
 function App() {
+  const {data } = FetchGet({url: "http://localhost:8090/api/v1/superheroes"})
   const [showSuperheroes, setShowSuperheroes] = useState(false)
   const [createSuperheroes, setCreateSuperheroes] = useState(false) 
   const [modifySuperheroes, setModifySuperheroes] = useState(false)
@@ -36,21 +38,8 @@ function App() {
 
   return (  
   <>
-    <header>
-      <div className="container">
-          <span style={{ '--l': "'S'" }}>S</span>
-          <span style={{ '--l': "'U'" }}>U</span>
-          <span style={{ '--l': "'P'" }}>P</span>
-          <span style={{ '--l': "'E'" }}>E</span>
-          <span style={{ '--l': "'R'" }}>R</span>
-          <span style={{ '--l': "'H'" }}>H</span>
-          <span style={{ '--l': "'E'" }}>E</span>
-          <span style={{ '--l': "'R'" }}>R</span>
-          <span style={{ '--l': "'O'" }}>O</span>
-          <span style={{ '--l': "'E'" }}>E</span>
-          <span style={{ '--l': "'S'" }}>S</span>
-        </div>
-    </header>
+    <Header/> 
+    
     <aside className='menu'>
           <button className={getButtonClassName(showSuperheroes)} onClick={toggleShowSuperheroes}>
             {getButtonText(showSuperheroes, 'Mostrar Superheroes','Mostrando Superheroes' )}
@@ -67,8 +56,10 @@ function App() {
       
     </aside>
     {createSuperheroes && <Formulario />}
-    {showSuperheroes && <CampoDeUsuarios />}
-    
+    {showSuperheroes && 
+    <article className='informacionSuperheroes'>
+      <CampoDeUsuarios data={data}/>
+    </article>}
 
 
   

@@ -7,6 +7,8 @@ function Formulario() {
 
     const onSubmit = handleSubmit((data)=> {
         console.log(data)})
+
+    console.log("formulario");
   return (
     <section className='form-register'>
       <form onSubmit={onSubmit}>

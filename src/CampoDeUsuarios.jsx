@@ -1,13 +1,13 @@
-import FetchGet from './FetchGet';
 import TarjetaUsuario from './TarjetaUsuario';
 
-function CampoDeUsuarios() {
+function CampoDeUsuarios({data}) {
+
+
   return (
-    <section>
+    <>
       <h1>SuperHeroes</h1>
-      <FetchGet url="http://localhost:8090/api/v1/superheroes">
-        {data =>
-          data.map(superheroe => (<TarjetaUsuario 
+      {data?.map(superheroe => (<TarjetaUsuario 
+            key={superheroe.idSuper}
             photoSuper={superheroe.photoSuper}
             age={superheroe.age}
             description={superheroe.description}
@@ -16,8 +16,7 @@ function CampoDeUsuarios() {
             suitColor={superheroe.suitColor}
             powers={superheroe.powers} />))
         }
-      </FetchGet>
-    </section>
+    </>
   );
 }
 

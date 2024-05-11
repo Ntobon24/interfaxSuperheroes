@@ -1,11 +1,10 @@
 
 
 function TarjetaUsuario(props) {
-  console.log(props);
   return (
         
-    
       <article>
+        <li key={props.idSuper}>
         <img
           className='tarjeta-usuario-foto'
           src={props.photoSuper}
@@ -19,13 +18,15 @@ function TarjetaUsuario(props) {
         <p>Suit Color: {props.suitColor}</p>
         <h3>Powers:</h3>
         <ul>
-          {props.powers.map((poder, index) => (
-            <li key={index}>
+          {props.powers.map((poder, idPower) => (
+            <li key={idPower}>
               <strong>Name:</strong> {poder.name}<br />
               <strong>Description:</strong> {poder.description}
             </li>
           ))}
+        
         </ul>
+        </li>
       </article>
   
 
