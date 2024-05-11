@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import './App.css'
-//import FetchGet from './FetchGet'
+import { useState } from 'react';
+import './App.css';
 import Formulario from './Formulario';
+import CampoDeUsuarios from './CampoDeUsuarios';
 
 
 function App() {
@@ -67,6 +67,8 @@ function App() {
       
     </aside>
     {createSuperheroes && <Formulario />}
+    {showSuperheroes && <CampoDeUsuarios />}
+    
 
 
   
@@ -77,4 +79,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

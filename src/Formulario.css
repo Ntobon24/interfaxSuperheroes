@@ -24,9 +24,7 @@ input{
     font-size: x-small;
   }
   
-.text{
-    color: #000000c0;
-}
+
 
 .form-register {
     border: 1px solid #ffffffd5;
@@ -54,7 +52,7 @@ input{
 
 input.boton {
     width: 130px; /* Ancho automático según el contenido */
-    background: #5f0000a6;
+    background: #280045a6;
     border: 1px solid #f0ffff; /* Borde blanco de 2px */
     padding: 5px 10px; /* Espaciado interno */
     color: rgba(255, 255, 255, 0.753);
@@ -62,7 +60,7 @@ input.boton {
     font-size: 14px;
     border-radius: 9px;
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    align-content: center;
+    align-content: ;
 }
 
 input.boton:hover {
