@@ -17,15 +17,29 @@ function App() {
 };
   const toggleShowSuperheroes = () => {
         setShowSuperheroes(!showSuperheroes);
+        setCreateSuperheroes(false);
+        setDeleteSuperheroes(false);
+        setModifySuperheroes(false);
+
     };
   const toggleCreateSuperheroes = () => {
         setCreateSuperheroes(!createSuperheroes);
+        setShowSuperheroes(false);
+        setDeleteSuperheroes(false);
+        setModifySuperheroes(false);
     };
   const toggleModifySuperheroes = () => {
           setModifySuperheroes(!modifySuperheroes);
+          setCreateSuperheroes(false);
+          setDeleteSuperheroes(false);
+          setShowSuperheroes(false);
     };
   const toggleDeleteSuperheroes = () => {
           setDeleteSuperheroes(!deleteSuperheroes);
+          setCreateSuperheroes(false);
+          setModifySuperheroes(false);
+          setShowSuperheroes(false);  
+          
     };
 
 
@@ -57,10 +71,10 @@ function App() {
     </aside>
     {createSuperheroes && <Formulario />}
     {showSuperheroes && 
-    <article className='informacionSuperheroes'>
+    < section className='form-register'>
       {loading && <p>Cargando...</p>}
       <CampoDeUsuarios data={data}/>
-    </article>}
+    </section>}
 
 
   
