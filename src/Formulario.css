@@ -60,7 +60,7 @@ input.boton {
     font-size: 14px;
     border-radius: 9px;
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    align-content: ;
+    align-content: center ;
 }
 
 input.boton:hover {

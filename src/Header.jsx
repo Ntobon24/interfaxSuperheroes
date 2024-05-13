@@ -1,4 +1,4 @@
-function header() {
+function Header() {
   return (
     <header>
       <div className="container">
@@ -18,4 +18,4 @@ function header() {
   );
 }
 
-export default header;
+export default Header;

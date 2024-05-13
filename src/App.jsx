@@ -6,7 +6,7 @@ import FetchGet from './FetchGet';
 import CampoDeUsuarios from './CampoDeUsuarios';
 
 function App() {
-  const {data } = FetchGet({url: "http://localhost:8090/api/v1/superheroes"})
+  const {data , loading} = FetchGet({url: "http://localhost:8090/api/v1/superheroes"})
   const [showSuperheroes, setShowSuperheroes] = useState(false)
   const [createSuperheroes, setCreateSuperheroes] = useState(false) 
   const [modifySuperheroes, setModifySuperheroes] = useState(false)
@@ -58,6 +58,7 @@ function App() {
     {createSuperheroes && <Formulario />}
     {showSuperheroes && 
     <article className='informacionSuperheroes'>
+      {loading && <p>Cargando...</p>}
       <CampoDeUsuarios data={data}/>
     </article>}
 

@@ -6,10 +6,6 @@ header {
   
 }
 
-section{
-  align-items: center;
-  justify-content: center;
-}
 
 body {
   background: -webkit-radial-gradient(#0d073d, #0a0011);

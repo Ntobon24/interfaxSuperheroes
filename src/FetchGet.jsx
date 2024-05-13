@@ -1,9 +1,12 @@
 import  { useState, useEffect } from 'react';
+import { set } from 'react-hook-form';
 
 function FetchGet({ url }) {
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    set
     const requestOptions = {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
@@ -12,9 +15,9 @@ function FetchGet({ url }) {
 
     fetch(url, requestOptions)
       .then(response => response.json())
-      .then(data => 
-        setData(data))
-      .catch(error => console.log(error));
+      .then(data => setData(data))
+      .catch(error => console.log(error))
+      .finally(() => setLoading(false));
   }, []); 
 
   return {data};
