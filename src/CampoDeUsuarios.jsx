@@ -1,11 +1,8 @@
 import TarjetaUsuario from './TarjetaUsuario';
-
 function CampoDeUsuarios({data}) {
-
-
+  
   return (
     <>
-      <h1>SuperHeroes</h1>
       {data?.map(superheroe => (<TarjetaUsuario 
             key={superheroe.idSuper}
             photoSuper={superheroe.photoSuper}

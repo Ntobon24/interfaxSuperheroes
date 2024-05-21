@@ -6,7 +6,6 @@ import FetchGet from './FetchGet';
 import CampoDeUsuarios from './CampoDeUsuarios';
 import './BotonesMenu.css';
 
-
 function App() {
   const {data , loading} = FetchGet({url: "http://localhost:8090/api/v1/superheroes"})
   const [showSuperheroes, setShowSuperheroes] = useState(false)
