@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import './App.css';
 import Formulario from './Formulario';
-import Header from './Header';
+import TituloDeLaPagina from './TituloDeLaPaginaWeb';
 import FetchGet from './FetchGet';
 import CampoDeUsuarios from './CampoDeUsuarios';
+import './BotonesMenu.css';
+
 
 function App() {
   const {data , loading} = FetchGet({url: "http://localhost:8090/api/v1/superheroes"})
@@ -52,29 +54,43 @@ function App() {
 
   return (  
   <>
-    <Header/> 
-    
-    <aside className='menu'>
-          <button className={getButtonClassName(showSuperheroes)} onClick={toggleShowSuperheroes}>
-            {getButtonText(showSuperheroes, 'Mostrar Superheroes','Mostrando Superheroes' )}
-          </button>
-          <button className={getButtonClassName(createSuperheroes)} onClick={toggleCreateSuperheroes}>
-            {getButtonText(createSuperheroes, 'Crear Superheroes', 'Creando Superheroes')}
-          </button>
-          <button className={getButtonClassName(modifySuperheroes)} onClick={toggleModifySuperheroes}>
-            {getButtonText(modifySuperheroes, 'Modificar Superheroes', 'Modificando Superheroes')}
-          </button>
-          <button className={getButtonClassName(deleteSuperheroes)} onClick={toggleDeleteSuperheroes}>
-            {getButtonText(deleteSuperheroes, 'Eliminar Superheroes', 'Eliminando Superheroes')}
-          </button>
+    <main>
+        <header>
+          <TituloDeLaPagina/> 
+            
+        </header>
+        <div className='contenidoPagina'>
+            <aside className='menu'>
+              <button className={getButtonClassName(showSuperheroes)} onClick={toggleShowSuperheroes}>
+                {getButtonText(showSuperheroes, 'Mostrar Superheroes','Mostrando Superheroes' )}
+              </button>
+              <button className={getButtonClassName(createSuperheroes)} onClick={toggleCreateSuperheroes}>
+                {getButtonText(createSuperheroes, 'Crear Superheroes', 'Creando Superheroes')}
+              </button>
+              <button className={getButtonClassName(modifySuperheroes)} onClick={toggleModifySuperheroes}>
+                {getButtonText(modifySuperheroes, 'Modificar Superheroes', 'Modificando Superheroes')}
+              </button>
+              <button className={getButtonClassName(deleteSuperheroes)} onClick={toggleDeleteSuperheroes}>
+                {getButtonText(deleteSuperheroes, 'Eliminar Superheroes', 'Eliminando Superheroes')}
+              </button>
       
-    </aside>
-    {createSuperheroes && <Formulario />}
-    {showSuperheroes && 
-    < section className='form-register'>
-      {loading && <p>Cargando...</p>}
-      <CampoDeUsuarios data={data}/>
-    </section>}
+            </aside>
+            <section className='contenidoDentroDeLaPagina'> 
+                {createSuperheroes && 
+                    <section className='espacio-contenido'>
+                        <Formulario />
+                    </section>
+                    }
+                {showSuperheroes && 
+                    <section className='espacio-contenido'>
+                        {loading && <p>Cargando...</p>}
+                        <CampoDeUsuarios data={data}/>
+                    </section>}
+                
+            </section>
+
+        </div>
+    </main>
 
 
   

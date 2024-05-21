@@ -1,21 +1,37 @@
-
-header {
-  position: fixed; /* Para fijar el header en la parte superior */
-  top: 0; /* Para colocar el header en la parte superior */
-
-  
-}
-
-
 body {
-  background: -webkit-radial-gradient(#0d073d, #0a0011);
   align-items: center;
   justify-content: center;
   margin: 0;
+  padding: 0;
+  height: 100%;
+  background: -webkit-radial-gradient(#0d073d, #0a0011); ;
+}
+
+main {
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  flex-direction: column;
   min-height: 100vh;
+}
+
+header {
+  background: -webkit-radial-gradient(#0d073d, #0a0011);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+}
+
+aside {
+  width: 300px;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: -webkit-radial-gradient(#261541bc, #0a00110d);
+  padding: 20px; /* Añade un espacio alrededor del contenido */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
 
 h1 {
@@ -35,15 +51,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
   color: rgba(240, 248, 255, 0.655);
-  
 }
 button:hover {
   border-color: #000dff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -55,6 +67,7 @@ button:focus-visible {
   }
  
 }
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -62,10 +75,12 @@ button:focus-visible {
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #2d0e5a;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+

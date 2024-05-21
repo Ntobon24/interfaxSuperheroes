@@ -1,6 +1,8 @@
-function Header() {
+import './TituloDelaPagina.css';
+
+function TituloDeLaPagina() {
   return (
-    <header>
+    <>
       <div className="container">
           <span style={{ '--l': "'S'" }}>S</span>
           <span style={{ '--l': "'U'" }}>U</span>
@@ -14,8 +16,9 @@ function Header() {
           <span style={{ '--l': "'E'" }}>E</span>
           <span style={{ '--l': "'S'" }}>S</span>
         </div>
-    </header>
+    </>
   );
 }
 
-export default Header;
+export default TituloDeLaPagina
+;

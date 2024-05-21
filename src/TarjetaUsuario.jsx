@@ -1,16 +1,14 @@
-
+import './TarjetaUsuario.css';
 
 function TarjetaUsuario(props) {
   return (
-        
-      <article>
-        <li key={props.idSuper}>
+    <article className="tarjeta-info">
+      <li key={props.idSuper} className="tarjeta-usuario-info">
         <img
-          className='tarjeta-usuario-foto'
+          className="tarjeta-usuario-foto"
           src={props.photoSuper}
+          alt={`Foto de ${props.name}`}
         />
-        
-
         <p>Age: {props.age}</p>
         <p>Description: {props.description}</p>
         <p>Name: {props.name}</p>
@@ -24,12 +22,9 @@ function TarjetaUsuario(props) {
               <strong>Description:</strong> {poder.description}
             </li>
           ))}
-        
         </ul>
-        </li>
-      </article>
-  
-
+      </li>
+    </article>
   );
 }
 export default TarjetaUsuario;

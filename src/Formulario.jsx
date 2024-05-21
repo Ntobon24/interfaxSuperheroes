@@ -10,7 +10,7 @@ function Formulario() {
 
     console.log("formulario");
   return (
-    <section className='form-register'>
+    <>
       <form onSubmit={onSubmit}>
         <label>
           <h1>Name:</h1>
@@ -111,7 +111,7 @@ function Formulario() {
 
         <input className= "boton" type="submit" value="Submit" />
       </form>
-    </section>
+    </>
 
   );
 }

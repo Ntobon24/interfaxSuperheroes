@@ -1,0 +1,41 @@
+.tarjeta-info {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    color:black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .tarjeta-usuario-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Para hacer la imagen redonda */
+    margin-bottom: 10px;
+  }
+  
+  .tarjeta-usuario-info {
+    text-align: center;
+  }
+  
+  .tarjeta-usuario-info p {
+    margin: 5px 0;
+  }
+  
+  .tarjeta-usuario-info ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .tarjeta-usuario-info ul li {
+    margin-bottom: 5px;
+  }
+  
+  /* Estilos adicionales */
+  strong {
+    font-weight: bold;
+  }
+  
