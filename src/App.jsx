@@ -5,6 +5,7 @@ import TituloDeLaPagina from './TituloDeLaPaginaWeb';
 import FetchGet from './FetchGet';
 import CampoDeUsuarios from './CampoDeUsuarios';
 import './BotonesMenu.css';
+import Carrusel from './Carrusel';
 
 function App() {
   const {data , loading} = FetchGet({url: "http://3.142.251.202:8090/api/v1/superheroes"})
@@ -75,6 +76,10 @@ function App() {
       
             </aside>
             <section className='contenidoDentroDeLaPagina'> 
+                <section className='espacio-contenido'>
+                    <Carrusel/>
+                </section>
+
                 {createSuperheroes && 
                     <section className='espacio-contenido'>
                         <Formulario />
