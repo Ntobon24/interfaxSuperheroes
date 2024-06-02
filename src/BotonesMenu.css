@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column; /* Cambia la dirección del flexbox a columna */
     justify-content: center;
+    width: 20%;
+    min-height: 100vh; /* Ajusta el ancho automáticamente al contenido */
   }
   
   

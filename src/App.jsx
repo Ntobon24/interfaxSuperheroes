@@ -6,6 +6,13 @@ import FetchGet from './FetchGet';
 import CampoDeUsuarios from './CampoDeUsuarios';
 import './BotonesMenu.css';
 import Carrusel from './Carrusel';
+import reeshood from './assets/imagenesCarrusel/reeshood.jpg';
+import supergirl from './assets/imagenesCarrusel/supergirl_season_4.jpg';
+import spiderwoman from './assets/imagenesCarrusel/spiderwoman.jpg';
+import spiderman from './assets/imagenesCarrusel/spiderman.jpg';
+import flechaverde from './assets/imagenesCarrusel/flechaverde.jpg';
+import flash from './assets/imagenesCarrusel/flash.jpg';
+import deadpool from './assets/imagenesCarrusel/deadpool.jpg';
 
 function App() {
   const {data , loading} = FetchGet({url: "http://3.142.251.202:8090/api/v1/superheroes"})
@@ -13,6 +20,18 @@ function App() {
   const [createSuperheroes, setCreateSuperheroes] = useState(false) 
   const [modifySuperheroes, setModifySuperheroes] = useState(false)
   const [deleteSuperheroes, setDeleteSuperheroes] = useState(false)
+  
+  const imagenes = [
+    reeshood,
+    supergirl,
+    spiderwoman,
+    spiderman,
+    reeshood,
+    flechaverde,
+    flash,
+    deadpool
+  ];
+
   
   const getButtonText = (showState, text1, text2) => {
     return showState ? `${text2}` : `${text1}`;
@@ -76,9 +95,11 @@ function App() {
       
             </aside>
             <section className='contenidoDentroDeLaPagina'> 
-                <section className='espacio-contenido'>
-                    <Carrusel/>
-                </section>
+                {!showSuperheroes && !createSuperheroes && !modifySuperheroes && !deleteSuperheroes && (
+                  <section className='carrusel-contenido'>
+                    <Carrusel autoPlay= {true}  imagenes = {imagenes}/>
+                  </section>
+                )}
 
                 {createSuperheroes && 
                     <section className='espacio-contenido'>

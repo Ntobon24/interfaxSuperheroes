@@ -1,23 +1,24 @@
 .contenidoDentroDeLaPagina {
   display: flex;
-  justify-content: center; 
+  justify-content: left; 
   align-items: center; 
-  height: 100vh;
+  
 
 }
 
 
 .contenidoPagina {
   display: flex;
+  
 
 }
 
 .espacio-contenido {
   border: 1px solid #ffffffd5;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  min-width: 300px; /* Tamaño mínimo */
+  min-width: 400px; /* Tamaño mínimo */
   background: #1b0656;
   padding: 20px; /* Aumentar el espacio interno */
   margin: 100px; /* Agregar margen alrededor del elemento */
@@ -26,10 +27,26 @@
   color: white;
   box-shadow: 7px 13px 37px #000;
   flex-direction: column; /* Para que los elementos se alineen en columnas */
+  max-width: 600px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 300px) {
   .espacio-contenido {
       flex-direction: row; /* Cambiar a dirección horizontal si el tamaño de la ventana es mayor a 600px */
   }
+}
+
+
+.carrusel-contenido{
+  
+  display: table-column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px ;
+  margin: 50px;
+  padding: 50px;
+  font-family: 'calibri';
+  color: white;
+  flex-direction: column; /* Para que los elementos se alineen en columnas */
+  max-width: 900px;
 }
