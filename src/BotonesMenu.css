@@ -17,7 +17,7 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow';
     border: 3px solid #000;
     transition: .3s ease background-color;
-    width: 80%; /* Ajusta el ancho automáticamente al contenido */
+    width: 100%; /* Ajusta el ancho automáticamente al contenido */
     box-sizing: border-box; 
     /* Asegura que el padding no aumente el ancho del botón */
   }
