@@ -1,16 +1,22 @@
+/* Estilos generales */
 body {
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
   justify-content: center;
   margin: 0;
   padding: 0;
-  height: 100%;
-  background: -webkit-radial-gradient(#0d073d, #0a0011); ;
+  background: -webkit-radial-gradient(#0d073d, #0a0011);
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 main {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   min-height: 100vh;
+  width: 100%;
 }
 
 header {
@@ -18,26 +24,27 @@ header {
   color: white;
   text-align: center;
   padding: 1rem;
+  width: 100%;
 }
 
-.content {
+.contenidoPagina {
   display: flex;
   flex: 1;
+  width: 100%;
+  flex-direction: row;
 }
 
 aside {
-  width: 300px;
+  width: 100%;
   padding: 1rem;
-  box-sizing: border-box;
   background: -webkit-radial-gradient(#261541bc, #0a00110d);
-  padding: 20px; /* Añade un espacio alrededor del contenido */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
   line-height: 1.1;
-  font: 1rem "Fira Sans", sans-serif;
-
+  font-size: 1rem;
+  font-family: "Fira Sans", sans-serif;
 }
 
 button {
@@ -52,34 +59,29 @@ button {
   transition: border-color 0.25s;
   color: rgba(240, 248, 255, 0.655);
 }
+
 button:hover {
   border-color: #000dff;
 }
 
+@media (min-width: 768px) {
+  .contenidoPagina {
+    flex-direction: row;
+  }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ff0000;
+  aside {
+    width: 300px;
   }
-  a:hover {
-    color: #747bff;
-  }
- 
 }
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
-

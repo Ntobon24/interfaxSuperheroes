@@ -42,9 +42,7 @@ export default function Carrusel({ autoPlay, imagenes }) {
 
 
     useEffect(()=>{
-        console.log("Rutas de imágenes:", imagenes);
-        console.log("Imagen seleccionada:", selectImagen);
-
+      
         if (autoPlay){
             const interval = setInterval(()=>{
                 selectNewImage(imagenes, true);

@@ -1,16 +1,19 @@
 .contenidoDentroDeLaPagina {
   display: flex;
-  justify-content: left; 
+  justify-content: center; 
   align-items: center; 
+  padding-left:65px ;
+    
+  }
   
 
-}
+
 
 
 .contenidoPagina {
   display: flex;
+  flex-direction: row;
   
-
 }
 
 .espacio-contenido {
@@ -18,16 +21,17 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  min-width: 400px; /* Tamaño mínimo */
+  min-width: 100px; /* Tamaño mínimo */
   background: #1b0656;
-  padding: 20px; /* Aumentar el espacio interno */
+  padding: 60px; /* Aumentar el espacio interno */
   margin: 100px; /* Agregar margen alrededor del elemento */
   border-radius: 4px;
   font-family: 'calibri';
   color: white;
   box-shadow: 7px 13px 37px #000;
   flex-direction: column; /* Para que los elementos se alineen en columnas */
-  max-width: 600px;
+  width: 700px;
+  height: 500px;
 }
 
 @media (min-width: 300px) {
