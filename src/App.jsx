@@ -3,7 +3,6 @@ import './App.css';
 import Formulario from './Formulario';
 import TituloDeLaPagina from './TituloDeLaPaginaWeb';
 import FetchGet from './FetchGet';
-import CampoDeUsuarios from './CampoDeUsuarios';
 import './BotonesMenu.css';
 import Carrusel from './Carrusel';
 import reeshood from './assets/imagenesCarrusel/reeshood.jpg';
@@ -13,9 +12,10 @@ import spiderman from './assets/imagenesCarrusel/spiderman.jpg';
 import flechaverde from './assets/imagenesCarrusel/flechaverde.jpg';
 import flash from './assets/imagenesCarrusel/flash.jpg';
 import deadpool from './assets/imagenesCarrusel/deadpool.jpg';
+import PaginatedSuperheroes from './components/Pagination/Pagination';
 
 function App() {
-  const {data , loading} = FetchGet({url: "http://3.142.251.202:8090/api/v1/superheroes"})
+  const {data , loading} = FetchGet({url: "http://localhost:8090/api/v1/superheroes"})
   const [showSuperheroes, setShowSuperheroes] = useState(false)
   const [createSuperheroes, setCreateSuperheroes] = useState(false) 
   const [modifySuperheroes, setModifySuperheroes] = useState(false)
@@ -109,7 +109,7 @@ function App() {
                 {showSuperheroes && 
                     <section className='espacio-contenido'>
                         {loading && <p>Cargando...</p>}
-                        <CampoDeUsuarios data={data}/>
+                        <PaginatedSuperheroes data={data}/>
                     </section>}
                 
             </section>

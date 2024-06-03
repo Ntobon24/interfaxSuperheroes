@@ -21,7 +21,6 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  min-width: 100px; /* Tamaño mínimo */
   background: #1b0656;
   padding: 60px; /* Aumentar el espacio interno */
   margin: 100px; /* Agregar margen alrededor del elemento */
@@ -30,8 +29,8 @@
   color: white;
   box-shadow: 7px 13px 37px #000;
   flex-direction: column; /* Para que los elementos se alineen en columnas */
-  width: 700px;
-  height: 500px;
+  min-width: 700px;
+  min-height: 500px;
 }
 
 @media (min-width: 300px) {
