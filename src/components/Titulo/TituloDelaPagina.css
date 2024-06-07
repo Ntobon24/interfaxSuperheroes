@@ -7,6 +7,7 @@
   margin-right: 20px; /* Agrega espacio entre los elementos */
   position: sticky;
   top: 0; /* Fija el elemento en la parte superior de .container */
+  min-width: 100vh;
 }
 .container span:last-child {
   margin-right: 0; /* Elimina el margen derecho del último elemento para evitar un espacio extra */

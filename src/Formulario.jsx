@@ -7,7 +7,12 @@ function Formulario() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const { sendRequest, isLoading, error } = FetchPost('/api/v1');
   const [powers, setPowers] = useState([]);
+  const [imageFile, setImageFile] = useState(null);
   const { register: registerPower, handleSubmit: handleSubmitPower, formState: { errors: powerErrors }, reset: resetPower } = useForm();
+
+  const handleImageChange = (e) => {
+    setImageFile(e.target.files[0]);
+  };
 
   const onSubmit = handleSubmit(async (data) => {
     const dataWithPowers = {
@@ -138,23 +143,17 @@ function Formulario() {
         </label>
 
         <label>
-          <h1>Introduce la url de la imagen:</h1>
-          
-          <input className="controls" type="text" name="Foto del superheroe"
-            {...register("Foto del superheroe", {
+          <h1>Introduce la imagen:</h1>
+          <input className="controls" type="file" name="photoSuper"
+            {...register("photoSuper", {
               required: {
                 value: true,
                 message: "Foto del superheroe es requerida"
-              },
-              minLength: {
-                value: 2,
-                message: "Foto del superheroe debe ser mayor a 2 caracteres"
-              },
-              maxLength: {
-                value: 1000,
-                message: "Foto del superheroe no debe ser mayor a 60 caracteres"
-              },
-            })} />
+              }
+            })}
+            onChange={handleImageChange}
+          />
+          {errors.photoSuper && <p className='errores'>{errors.photoSuper.message}</p>}
         </label>
 
         <input className="boton" type="submit" value="Submit" />

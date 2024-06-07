@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import './App.css';
 import Formulario from './Formulario';
-import TituloDeLaPagina from './TituloDeLaPaginaWeb';
+import TituloDeLaPagina from './components/Titulo/TituloDeLaPaginaWeb';
 import FetchGet from './FetchGet';
 import './BotonesMenu.css';
-import Carrusel from './Carrusel';
+import Carrusel from './components/Carrusel/Carrusel';
 import reeshood from './assets/imagenesCarrusel/reeshood.jpg';
 import supergirl from './assets/imagenesCarrusel/supergirl_season_4.jpg';
 import spiderwoman from './assets/imagenesCarrusel/spiderwoman.jpg';

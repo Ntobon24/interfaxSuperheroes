@@ -8,8 +8,22 @@ import styled from 'styled-components';
 
 
 const TarjetaUsuarioInfo = styled.div`
-  text-align: justify;
 
+width: 100%;
+  text-align: left;
+  padding: 16px;
+  margin-bottom: 16px;
+  
+`;
+
+
+const TarjetaPoderesInfo = styled.div`´
+
+
+width: 100%;
+display: flex;
+justify-content: space-between ;
+padding: 2px; 
 `;
 
 
@@ -25,29 +39,23 @@ function TarjetaUsuario(props) {
         />
         <CardContent>
         <TarjetaUsuarioInfo key={props.idSuper} >
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5"  color = "black" component="div">
           {props.name}    
         </Typography>
         <Typography variant="body2" color="text.secondary">
-        <strong>Age:</strong> {props.age + ' years '}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-          <strong> Description:</strong> {props.description}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-          <strong>Nickname:</strong> {props.nickName}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-          <strong>Suit Color:</strong> {props.suitColor}
+        <strong>Age:</strong> {props.age + ' years' + '. '}
+          <strong> Description:</strong> {props.description+ '.  '}
+          <strong>Nickname:</strong> {props.nickName+ ' '}
+          <strong>Suit Color:</strong> {props.suitColor+ ' '}
           </Typography>
           <div className='contenedor-botones'>
-          Powers: 
+          <strong>Powers:</strong>
           <>
             {props.powers.map((poder, idPower) => (
-              <ul key={idPower}>
-                <strong>Name:</strong> {poder.name}<br />
-                <strong>Description:</strong> {poder.description}
-              </ul>
+              <TarjetaPoderesInfo key={idPower}>
+                <strong>Name:</strong> {poder.name  }
+                <strong>Description:</strong> {poder.description }
+              </TarjetaPoderesInfo>
             ))}
           </>
         </div>

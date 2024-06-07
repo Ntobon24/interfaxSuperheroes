@@ -15,7 +15,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function RowAndColumnSpacing({ superheroes }) {
   return (
-    <Box sx={{ minWidth: '100%', minHeight: '500%'}}>
+    <Box sx={{ minWidth: '100%', maxWidth: '800px'}}>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {superheroes.map((superheroe, index) => (
           <Grid item xs={6} key={index}>
