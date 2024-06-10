@@ -6,7 +6,6 @@ function FetchGet({ url }) {
   const [, setLoading] = useState(true);
 
   useEffect(() => {
-    set
     const requestOptions = {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
