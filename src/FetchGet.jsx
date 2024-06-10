@@ -3,7 +3,7 @@ import { set } from 'react-hook-form';
 
 function FetchGet({ url }) {
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [, setLoading] = useState(true);
 
   useEffect(() => {
     set

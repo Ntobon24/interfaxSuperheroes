@@ -17,11 +17,10 @@ function RowAndColumnSpacing({ superheroes }) {
   return (
     <Box sx={{ minWidth: '100%', maxWidth: '800px'}}>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        {superheroes.map((superheroe, index) => (
-          <Grid item xs={6} key={index}>
+        {superheroes.map((superheroe) => (
+          <Grid item xs={6} key={superheroe.idSuper}>
             <Item>
               <TarjetaUsuario 
-                key={superheroe.idSuper}
                 photoSuper={superheroe.photoSuper}
                 age={superheroe.age}
                 description={superheroe.description}

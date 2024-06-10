@@ -4,10 +4,10 @@ import FetchPost from './FetchPost';
 import './Formulario.css';
 
 function Formulario() {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const { sendRequest, isLoading, error } = FetchPost('/api/v1');
   const [powers, setPowers] = useState([]);
-  const [imageFile, setImageFile] = useState(null);
+  const [, setImageFile] = useState(null);
   const { register: registerPower, handleSubmit: handleSubmitPower, formState: { errors: powerErrors }, reset: resetPower } = useForm();
 
   const handleImageChange = (e) => {
@@ -26,28 +26,29 @@ function Formulario() {
     }
 
     console.log("Datos enviados:", dataWithPowers);
-  
+
     const responseData = await sendRequest(dataWithPowers);
     console.log(responseData);
   });
-  
+
   const onAddPower = handleSubmitPower((powerData) => {
-    setPowers([...powers, powerData]);
-    console.log("Poder agregado:", powerData);
+    const newPower = { ...powerData, id: new Date().getTime() }; // Genera un ID único basado en la fecha actual
+    setPowers([...powers, newPower]);
+    console.log("Poder agregado:", newPower);
     resetPower();
   });
-  
+
   if (isLoading) {
     return <div>Cargando...</div>;
   }
-  
+
   if (error) {
     return <div>Error: {error}</div>;
   }
-  
+
   return (
     <>
-      <form className= "formulario-principal" onSubmit={onSubmit}>
+      <form className="formulario-principal" onSubmit={onSubmit}>
         <label>
           <h1>Name:</h1>
           <input className="controls" type="text" name="name"
@@ -204,12 +205,12 @@ function Formulario() {
       </form>
 
       <ul>
-        {powers.map((power, index) => (
-          <li key={index}>{power.name}: {power.description}</li>
+        {powers.map((power) => (
+          <li key={power.id}>{power.name}: {power.description}</li>
         ))}
       </ul>
     </>
   );
 }
 
-export default Formulario;
+export default Formulario;
