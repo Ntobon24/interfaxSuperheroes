@@ -1,6 +1,5 @@
-import { useState , useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
 
 const CarouselButtonContainer = styled.div`
   display: flex;
@@ -10,75 +9,75 @@ const CarouselButtonContainer = styled.div`
   flex-direction: row; 
 `;
 
-
-
 const CarruselImg = styled.img`
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    opacity: 0;
-    transition:  1s;
-    &.loaded{
-        opacity: 1;
-    }
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: 1s;
+  &.loaded {
+    opacity: 1;
+  }
 `;
+
 const BotonesCarrusel = styled.button`
-    flex: 1; 
-    padding: 8px;
-    margin: 0 5px;
-    border: solid 1px #000;
+  flex: 1; 
+  padding: 8px;
+  margin: 0 5px;
+  border: solid 1px #000;
 `;
-
-
-
 
 export default function Carrusel({ autoPlay, imagenes }) {
-    const [selectedIndex, setSelectedIndex] = useState(0);  
-    const [selectImagen, setSelectImagen] = useState(imagenes && imagenes.length > 0 ? imagenes[0] : null);
+  const [selectedIndex, setSelectedIndex] = useState(0);  
+  const [selectImagen, setSelectImagen] = useState(imagenes && imagenes.length > 0 ? imagenes[0] : null);
+  const [loaded, setLoaded] = useState(false);
 
-    const [loaded, setLoaded] = useState(false);
-
-
-
-
-    useEffect(()=>{
-      
-        if (autoPlay){
-            const interval = setInterval(()=>{
-                selectNewImage(imagenes, true);
-            },1000);
-        
-        return() => clearInterval(interval);
+  useEffect(() => {
+    if (autoPlay) {
+      const interval = setInterval(() => {
+        selectNewImage(imagenes, true);
+      }, 1000);
+      return () => clearInterval(interval);
     }
-    });
-    const selectNewImage = (imagenes , next = true) => {
-        setLoaded(false);
-        setTimeout(() => {
-        const condition = next ? selectedIndex < imagenes.length - 1 : selectedIndex > 0;
-        const nextIndex = next ? (condition ? selectedIndex + 1 : 0) : (condition ? selectedIndex - 1 : imagenes.length - 1);
+  }, [autoPlay, imagenes, selectedIndex]);
 
-        setSelectImagen(imagenes[nextIndex]);
-        setSelectedIndex(nextIndex);
-    },500);
-    
-};
+  const selectNewImage = (imagenes, next = true) => {
+    setLoaded(false);
+    setTimeout(() => {
+      let nextIndex;
+      if (next) {
+        nextIndex = selectedIndex < imagenes.length - 1 ? selectedIndex + 1 : 0;
+      } else {
+        nextIndex = selectedIndex > 0 ? selectedIndex - 1 : imagenes.length - 1;
+      }
 
-    const previous = () => {
-        selectNewImage(imagenes,false);
-    };
+      setSelectImagen(imagenes[nextIndex]);
+      setSelectedIndex(nextIndex);
+    }, 500);
+  };
 
-    const next = () => {
-        selectNewImage(imagenes,true);
-    };
+  const previous = () => {
+    selectNewImage(imagenes, false);
+  };
 
-    return (
-        <>
-            {selectImagen && <CarruselImg src={selectImagen} alt="Gentleman" className={loaded ? "loaded" : ""} onLoad={() => setLoaded(true)} />}
+  const next = () => {
+    selectNewImage(imagenes, true);
+  };
 
-            <CarouselButtonContainer>
-            <BotonesCarrusel  onClick={previous}>Anterior</BotonesCarrusel>
-            <BotonesCarrusel  onClick={next}>Siguiente</BotonesCarrusel>   
-            </CarouselButtonContainer> 
-        </>
-    );
+  return (
+    <>
+      {selectImagen && (
+        <CarruselImg
+          src={selectImagen}
+          alt="Gentleman"
+          className={loaded ? "loaded" : ""}
+          onLoad={() => setLoaded(true)}
+        />
+      )}
+      <CarouselButtonContainer>
+        <BotonesCarrusel onClick={previous}>Anterior</BotonesCarrusel>
+        <BotonesCarrusel onClick={next}>Siguiente</BotonesCarrusel>
+      </CarouselButtonContainer>
+    </>
+  );
 }
