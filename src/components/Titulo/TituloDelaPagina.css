@@ -1,7 +1,7 @@
 .container span {
   font-size: 80px;
   font-weight: bold;
-  font-family: 'Fredoka One', pacifico;
+  font-family: Fredoka One, sans-serif;
   cursor: pointer;
   transition: all 300ms ease-in-out;
   margin-right: 20px; /* Agrega espacio entre los elementos */
