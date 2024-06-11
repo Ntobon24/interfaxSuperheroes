@@ -25,7 +25,7 @@
   padding: 60px; /* Aumentar el espacio interno */
   margin: 100px; /* Agregar margen alrededor del elemento */
   border-radius: 4px;
-  font-family: Calibri;
+  font-family: Calibri, sans-serif;
   color: white;
   box-shadow: 7px 13px 37px #000;
   flex-direction: column; /* Para que los elementos se alineen en columnas */
@@ -48,7 +48,7 @@
   border-radius: 4px ;
   margin: 50px;
   padding: 50px;
-  font-family: Calibri;
+  font-family: Calibri, sans-serif;
   color: white;
   flex-direction: column; /* Para que los elementos se alineen en columnas */
   max-width: 900px;
