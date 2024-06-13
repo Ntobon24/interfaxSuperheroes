@@ -143,19 +143,7 @@ function Formulario() {
           {errors.description && <p className='errores'>{errors.description.message}</p>}
         </label>
 
-        <label>
-          <h1>Introduce la imagen:</h1>
-          <input className="controls" type="file" name="photoSuper"
-            {...register("photoSuper", {
-              required: {
-                value: true,
-                message: "Foto del superheroe es requerida"
-              }
-            })}
-            onChange={handleImageChange}
-          />
-          {errors.photoSuper && <p className='errores'>{errors.photoSuper.message}</p>}
-        </label>
+        
 
         <input className="boton" type="submit" value="Submit" />
       </form>
