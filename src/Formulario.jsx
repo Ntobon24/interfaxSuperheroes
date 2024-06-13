@@ -5,7 +5,7 @@ import './Formulario.css';
 
 function Formulario() {
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const { sendRequest, isLoading, error } = FetchPost('https://3.145.188.163:8090/api/v1');
+  const { sendRequest, isLoading, error } = FetchPost('/api/v1');
   const [powers, setPowers] = useState([]);
   const [, setImageFile] = useState(null);
   const { register: registerPower, handleSubmit: handleSubmitPower, formState: { errors: powerErrors }, reset: resetPower } = useForm();
