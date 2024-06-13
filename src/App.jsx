@@ -15,7 +15,11 @@ import deadpool from './assets/imagenesCarrusel/deadpool.jpg';
 import PaginatedSuperheroes from './components/Pagination/Pagination';
 
 function App() {
+<<<<<<< HEAD
   const {data , loading} = FetchGet({url: "/api/v1/superheroes"})
+=======
+  const {data , loading} = FetchGet({url: "https://3.145.188.163:8090/api/v1/superheroes"})
+>>>>>>> 7d12550f6774cb2251ad3ef0a8daca5faaf4f277
   const [showSuperheroes, setShowSuperheroes] = useState(false)
   const [createSuperheroes, setCreateSuperheroes] = useState(false) 
   const [modifySuperheroes, setModifySuperheroes] = useState(false)
